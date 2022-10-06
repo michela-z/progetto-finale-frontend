@@ -25,7 +25,7 @@ Nel terminale eseguire:
 - Bundler: webpack
 
 ## LINK al progetto
- Prova il progetto qui: [https://.netlify.app](https://.netlify.app)
+ Prova il progetto qui: [https://globalwarmingbymz.netlify.app/](https://globalwarmingbymz.netlify.app/)
    ~   GitHub Repository: [https://github.com/michela-z/progetto-finale-frontend](https://github.com/michela-z/progetto-finale-frontend) 
 
 
