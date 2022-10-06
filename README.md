@@ -25,8 +25,8 @@ Nel terminale eseguire:
 - Bundler: webpack
 
 ## LINK al progetto
- Prova il progetto qui: [https://justvegetables.netlify.app](https://justvegetables.netlify.app)
-   ~   GitHub Repository: [https://github.com/michela-z/justVegetables](https://github.com/michela-z/justVegetables) 
+ Prova il progetto qui: [https://.netlify.app](https://.netlify.app)
+   ~   GitHub Repository: [https://github.com/michela-z/progetto-finale-frontend](https://github.com/michela-z/progetto-finale-frontend) 
 
 
 ## Contatti
