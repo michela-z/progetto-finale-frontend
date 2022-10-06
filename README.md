@@ -9,10 +9,7 @@
 
 
 ## Descrizione
-Questa applicazione si basa sul servizio esterno di Spoonacular e mostra esclusivamente ricette vegetariane o vegane.
-Tra queste, tramite la barra di ricerca, è possibile ricercare ricette con uno specifico ingrediente.
-È possibile inoltre salvare le ricette di nostro interesse tra i preferiti.
-Cliccando sulla scheda di anteprima di ogni ricetta si viene reindirizzati alla pagina con i dettagli.
+Questa applicazione grazie ai dati forniti da sito [global-warming.org](https://global-warming.org/) tramite API, mostra grazie a apposite dashboard, i dati riguardo il cambiamento della temperatura globale, lo scioglimento delle calotte polari, i livelli di anidrite carbonica, biossido di azoto e di metano.
 
 
 ## Come eseguire l'applicazione
@@ -24,8 +21,8 @@ Nel terminale eseguire:
 
 ## Linguaggi utilizzati
 - React
-- Librerie esterne: axios.
-- Bundler: webpack.
+- Librerie esterne: axios
+- Bundler: webpack
 
 ## LINK al progetto
  Prova il progetto qui: [https://justvegetables.netlify.app](https://justvegetables.netlify.app)
