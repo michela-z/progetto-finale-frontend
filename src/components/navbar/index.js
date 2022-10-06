@@ -5,7 +5,7 @@ import { AiOutlineMenu } from 'react-icons/ai'
 
 function Navbar() {
 
-    const [isActive, setIsActive] = useState(false);
+    const [isActive, setIsActive] = useState(true);
 
     const handleClick = event => {
         setIsActive(current => !current);
