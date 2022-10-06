@@ -21,7 +21,8 @@
 }
 
 .chart-container {
-    margin-top: 40px;
+    /* border: solid 1px red; */
+    margin: 40px;
 }
 
 .subtitle {

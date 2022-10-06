@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import { Link, NavLink } from 'react-router-dom';
+import { AiOutlineMenu } from 'react-icons/ai'
 
 function Navbar() {
+
+    const [isActive, setIsActive] = useState(false);
+
+    const handleClick = event => {
+        setIsActive(current => !current);
+    };
 
     const navStyles = ({ isActive }) => {
         return {
@@ -18,7 +25,9 @@ function Navbar() {
                 <h2>Global Warming</h2>
             </Link>
 
-            <div className='nav-list'>
+            <AiOutlineMenu size={30} className='burger-menu' onClick={handleClick}/>
+
+            <div className={isActive ? 'nav-list' : 'nav-list mobile'}>
                 <ul>
                 <NavLink to={'/'} style={navStyles}><li>Home</li></NavLink>
                 <NavLink to={'/temperature'} style={navStyles}><li>Temperature</li></NavLink>

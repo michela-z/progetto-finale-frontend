@@ -33,6 +33,9 @@
     background-color: rgba(114, 141, 150, 0.235);
 }
 
-/* .card:hover h2 {
-    color: rgb(255, 255, 255);
-} */
+
+@media only screen and (max-width: 400px) {
+    .card {
+        height: 150px;
+    }
+}

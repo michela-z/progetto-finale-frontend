@@ -8,18 +8,19 @@
   color: white;
 }
 
-.App {
+body {
   background: radial-gradient(#05485c, black);
-  height: 100vh;
+  overflow-x: hidden;
+}
+
+.App {
   text-align: center;
 }
 
 .main-container {
-  /* border: solid 1px rgba(255, 255, 255, 0.279);  */
   margin: 30px auto;
   width: 90%;
   max-width: 1500px;
-  height: 70vh;
   padding: 30px;
 }
 
@@ -29,4 +30,10 @@
 
 .card-subtitle {
   text-align: left;
+}
+
+@media only screen and (max-width: 500px) {
+  .main-container {
+    padding: 0;
+  }
 }

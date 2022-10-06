@@ -45,5 +45,6 @@ module.exports = {
         host: 'localhost',
         port: port,
         open: true,
+        hot: true,
     }
 };

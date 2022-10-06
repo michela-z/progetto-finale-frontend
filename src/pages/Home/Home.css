@@ -1,5 +1,4 @@
 .card-container {
-    /* border: solid 1px white; */
     border-radius: 10px;
     max-width: 1000px;
     width: 80%;
@@ -7,13 +6,25 @@
 }
 
 .card-cnt-top {
-    /* border: solid 1px blue; */
     display: grid;
     grid-template-columns: auto auto;
 }
 
 .card-cnt-bottom {
-    /* border: solid 1px blue; */
     display: grid;
     grid-template-columns: auto auto auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .card-container {
+        margin-top: 40px;
+    }
+    .card-cnt-top {
+        display: flex;
+        flex-direction: column;
+    }
+    .card-cnt-bottom {
+        display: flex;
+        flex-direction: column;
+    }
 }
