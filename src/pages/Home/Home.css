@@ -1,0 +1,19 @@
+.card-container {
+    /* border: solid 1px white; */
+    border-radius: 10px;
+    max-width: 1000px;
+    width: 80%;
+    margin: 100px auto;
+}
+
+.card-cnt-top {
+    /* border: solid 1px blue; */
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.card-cnt-bottom {
+    /* border: solid 1px blue; */
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
