@@ -9,7 +9,10 @@
 }
 
 body {
+  position: static;
+  height: 100vh;
   background: radial-gradient(#05485c, black);
+  background-repeat: no-repeat;
   overflow-x: hidden;
 }
 
@@ -35,5 +38,8 @@ body {
 @media only screen and (max-width: 500px) {
   .main-container {
     padding: 0;
+  }
+  body {
+    height: 100%;
   }
 }
