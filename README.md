@@ -21,6 +21,7 @@ Nel terminale eseguire:
 
 ## Linguaggi utilizzati
 - React
+- Framework CSS: bootstrap
 - Librerie esterne: axios
 - Bundler: webpack
 
