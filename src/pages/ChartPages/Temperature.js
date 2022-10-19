@@ -1,9 +1,9 @@
 import React from 'react';
 import Navbar from '../../components/navbar';
-import { getData } from '../../api'
 import { Bar, BarChart, CartesianGrid, Label, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import styles from './ChartPage.module.scss';
 import { Await, useLoaderData } from 'react-router-dom';
+import { getData } from '../../api'
 
 const param = 'temperature';
 
