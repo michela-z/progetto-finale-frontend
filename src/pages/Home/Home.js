@@ -3,7 +3,6 @@ import styles from './Home.module.scss';
 import Card from '../../components/card';
 import Navbar from '../../components/navbar';
 import { Link } from 'react-router-dom';
-import { getData } from '../../api'
 
 function Home(props) {
     
@@ -28,7 +27,3 @@ function Home(props) {
 }
 
 export default Home
-
-export function loader() {
-    return getData()
-}
