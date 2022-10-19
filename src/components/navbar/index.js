@@ -1,44 +1,32 @@
-import React, { useState } from 'react'
-import './Navbar.css'
-import { Link, NavLink } from 'react-router-dom';
-import { AiOutlineMenu } from 'react-icons/ai'
+import React from 'react'
+import { NavLink } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
-function Navbar() {
 
-    const [isActive, setIsActive] = useState(true);
-
-    const handleClick = event => {
-        setIsActive(current => !current);
-    };
-
-    const navStyles = ({ isActive }) => {
-        return {
-            fontWeight: isActive ? 'bold' : 'light',
-            textDecoration: isActive ? 'underline' : 'none',
-        }
-    }
+function Navigation() {
 
     return (
-        <div className='navbar'>
-            
-            <Link to={'/'} style={{ textDecoration: 'none' }}>
-                <h2>Global Warming</h2>
-            </Link>
-
-            <AiOutlineMenu size={30} className='burger-menu' onClick={handleClick}/>
-
-            <div className={isActive ? 'nav-list' : 'nav-list mobile'}>
-                <ul>
-                <NavLink to={'/'} style={navStyles}><li>Home</li></NavLink>
-                <NavLink to={'/temperature'} style={navStyles}><li>Temperature</li></NavLink>
-                <NavLink to={'/co2'} style={navStyles}><li>Co2</li></NavLink>
-                <NavLink to={'/methan'} style={navStyles}><li>Methan</li></NavLink>
-                <NavLink to={'/no2'} style={navStyles}><li>No2</li></NavLink>
-                <NavLink to={'/polar-ice'} style={navStyles} ><li>Polar Ice</li></NavLink>
-                </ul>
-            </div>
-        </div>
+        <>
+        <Navbar collapseOnSelect expand="lg" bg="black" variant="dark" sticky="top" style={{borderBottom: '1px solid #05485c'}}>
+        <Container>
+            <Navbar.Brand as={NavLink} to={'/'}><h3 className="fw-bold">Global Warming</h3></Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
+                <Nav>
+                <Nav.Link as={NavLink} to={'/'} style={{color: '#1ab0ca'}} className="fw-normal">Home</Nav.Link>
+                <Nav.Link as={NavLink} to={'/temperature'}>Temperature</Nav.Link>
+                <Nav.Link as={NavLink} to={'/co2'}>Co2</Nav.Link>
+                <Nav.Link as={NavLink} to={'/methan'}>Methan</Nav.Link>
+                <Nav.Link as={NavLink} to={'/no2'}>No2</Nav.Link>
+                <Nav.Link as={NavLink} to={'/polar-ice'}>Polar Ice</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+        </Container>
+        </Navbar>
+        </>
     )
 }
 
-export default Navbar
+export default Navigation

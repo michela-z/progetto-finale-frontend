@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "node_modules/bootstrap/scss/bootstrap";
 
 * {
   margin: 0;
@@ -20,7 +21,7 @@ body {
   text-align: center;
 }
 
-.main-container {
+.maincontainer {
   margin: 30px auto;
   width: 90%;
   max-width: 1500px;
@@ -31,12 +32,8 @@ body {
   font-size: 2rem;
 }
 
-.card-subtitle {
-  text-align: left;
-}
-
 @media only screen and (max-width: 500px) {
-  .main-container {
+  .maincontainer {
     padding: 0;
   }
   body {

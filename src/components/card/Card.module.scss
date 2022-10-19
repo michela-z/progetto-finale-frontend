@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.card {
+    border: 1px solid $secondary;
+    background: #ffffff0b;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+
+    div {
+        width: 80%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    p {
+        color: $subtitle;
+    }
+    h2 {
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+    &:hover {
+        background-color: #ffffff24;
+    }
+}
+
+.subtitle {
+    text-align: left;
+}
+
+
+@media only screen and (max-width: 400px) {
+    .card {
+        height: 150px;
+    }
+}

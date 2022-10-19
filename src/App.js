@@ -1,25 +1,28 @@
 import React from 'react';
-import './App.css';
-import { Routes, Route } from "react-router-dom";
+import styles from './App.module.scss';
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
 import Home from './pages/Home/Home';
-import Temperature from './pages/temperature/Temperature';
-import Co2 from './pages/co2/Co2';
-import Methan from './pages/methan/Methan';
-import No2 from './pages/no2/No2';
-import PolarICe from './pages/polar-ice/PolarIce'
+import Temperature, { loader as tempLoader } from './pages/ChartPages/Temperature';
+import Co2, { loader as co2Loader } from './pages/ChartPages/Co2';
+import Methan, { loader as methanLoader } from './pages/ChartPages/Methan';
+import No2, { loader as no2Loader } from './pages/ChartPages/No2';
+import PolarICe, { loader as polariceLoader } from './pages/ChartPages/PolarIce';
+
+const router = createBrowserRouter(createRoutesFromElements( 
+  <Route className={styles.App}>
+    <Route path='/' element={<Home />}/>
+    <Route path='/temperature' element={<Temperature />} loader={tempLoader}/>
+    <Route path='/co2' element={<Co2 />} loader={co2Loader}/>
+    <Route path='/methan' element={<Methan />} loader={methanLoader}/>
+    <Route path='/no2' element={<No2 />} loader={no2Loader}/>
+    <Route path='/polar-ice' element={<PolarICe />} loader={polariceLoader}/>
+  </Route>
+));
+
 
 function App() {
   return (
-    <div className='App'>
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/temperature' element={<Temperature />}/>
-        <Route path='/co2' element={<Co2 />}/>
-        <Route path='/methan' element={<Methan />}/>
-        <Route path='/no2' element={<No2 />}/>
-        <Route path='/polar-ice' element={<PolarICe />}/>
-      </Routes>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 

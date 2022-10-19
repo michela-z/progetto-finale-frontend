@@ -1,49 +1,35 @@
 import React from 'react';
 import Navbar from '../../components/navbar';
-import './Temperature.css'
 import { getData } from '../../api'
-import { useEffect, useState } from 'react';
 import { Bar, BarChart, CartesianGrid, Label, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import styles from './ChartPage.module.scss';
+import { Await, useLoaderData } from 'react-router-dom';
+
+const param = 'temperature';
 
 function Temperature() {
 
-  const [temperature, setTemperature] = useState([]);
-  const [lastvalue, setLastvalue] = useState([]);
+  const loaderData = useLoaderData();
 
-  const getLastValue = () => {
-      let result = temperature.slice(-1);
-      let lastValue = result[0]?.station;
-      setLastvalue(lastValue)
-  }
-
-  const param = 'temperature';
-
-  useEffect(() => {
-    getData(param)
-    .then((response) => {
-      setTemperature(response.data.result)
-      //console.log(response.data.result)
-    })
-  },[])
-
-  useEffect(() => {
-      getLastValue()
-  },[temperature])
+  let result = loaderData.data.result.slice(-1);
+  let lastvalue = result[0].station;
 
   return (
     <div>
       <Navbar />
-      <div className='main-container'>
-      <h2 className='page-title'>Temperature</h2>
-      <p className='subtitle'>Global temperature anomalies from 1880 to present</p>
+      <div className={styles.container}>
+      <h2 className={styles.title}>Temperature</h2>
+      <p className={styles.subtitle}>Global temperature anomalies from 1880 to present</p>
 
-      <div className='info'>
+      <div className={styles.info}> 
         <p>Last Value: {lastvalue}</p>
       </div>
 
-      <div className='chart-container'>
+      <React.Suspense fallback={<p>Loading...</p>}>
+      <Await resolve={loaderData.data.result}>
+        {(data) => (
         <ResponsiveContainer width='90%' height={500}>
-          <BarChart data={temperature} margin={{bottom: 10, left: 10}}>
+          <BarChart data={data} margin={{bottom: 10, left: 10}}>
             <CartesianGrid opacity={0.1} vertical={false}/>
             <XAxis dataKey="time" stroke="#ffffff6b">
             <Label value="Year" offset={-10} position="insideBottom" fill="#4c7482" />
@@ -55,11 +41,17 @@ function Temperature() {
             <Bar dataKey="station" fill="#FF5C00" />
           </BarChart>
         </ResponsiveContainer>
-      </div>
+        )}
+      </ Await>
+      </React.Suspense>
 
       </div>
     </div>
   )
 }
 
-export default Temperature
+export default Temperature;
+
+export function loader() {
+  return getData(param);
+}
