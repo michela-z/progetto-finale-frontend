@@ -1,35 +1,30 @@
-import React from 'react'
-import Navbar from '../../components/navbar';
-import { getData } from '../../api';
+import React from 'react';
+import { Await } from 'react-router-dom';
 import { Area, AreaChart, CartesianGrid, Label, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import styles from './ChartPage.module.scss';
-import { Await, useLoaderData } from 'react-router-dom';
+import styles from './MetricComponents.module.scss';
 
-const param = 'co2';
+function Co2( props ) {
 
-function Co2() {
+    let loader = props.loaderData;
 
-    const loaderData = useLoaderData();
-
-    let result = loaderData.data.co2.slice(-1);
+    let result = loader.data.co2.slice(-1);
     let lastvalue = result[0].trend;
 
     return (
         <div>
-            <Navbar />
             <div className={styles.container}>
             <h2 className={styles.title}>Carbon Dioxide</h2>
             <p className={styles.subtitle}>Carbon Dioxide levels from 2012 to present</p>
-
+            
             <div className={styles.info}>
                 <p>Last Value: {lastvalue}</p>
             </div>
 
             <React.Suspense fallback={<p>Loading...</p>}>
-            <Await resolve={loaderData.data.co2}>
+            <Await resolve={loader}>
                 {(data) => (
                 <ResponsiveContainer width='100%' height={500}>
-                <AreaChart data={data} margin={{bottom: 10, left: 10}}>
+                <AreaChart data={data.data.co2} margin={{bottom: 10, left: 10}}>
                     <defs>
                         <linearGradient id="color" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0%" stopColor="#2451b7" stopOpacity={0.4}/>
@@ -58,6 +53,6 @@ function Co2() {
 
 export default Co2
 
-export function loader() {
-    return getData(param);
-}
+// export function loader() {
+//     return getData(param);
+// }

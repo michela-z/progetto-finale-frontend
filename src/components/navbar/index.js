@@ -16,11 +16,11 @@ function Navigation() {
             <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
                 <Nav>
                 <Nav.Link as={NavLink} to={'/'} style={{color: '#1ab0ca'}} className="fw-normal">Home</Nav.Link>
-                <Nav.Link as={NavLink} to={'/temperature'}>Temperature</Nav.Link>
-                <Nav.Link as={NavLink} to={'/co2'}>Co2</Nav.Link>
-                <Nav.Link as={NavLink} to={'/methan'}>Methan</Nav.Link>
-                <Nav.Link as={NavLink} to={'/no2'}>No2</Nav.Link>
-                <Nav.Link as={NavLink} to={'/polar-ice'}>Polar Ice</Nav.Link>
+                <Nav.Link as={NavLink} to={'temperature'}>Temperature</Nav.Link>
+                <Nav.Link as={NavLink} to={'co2'}>Co2</Nav.Link>
+                <Nav.Link as={NavLink} to={'methane'}>Methane</Nav.Link>
+                <Nav.Link as={NavLink} to={'nitrous-oxide'}>No2</Nav.Link>
+                <Nav.Link as={NavLink} to={'arctic'}>Polar Ice</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Container>

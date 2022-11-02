@@ -1,25 +1,20 @@
 import React from 'react'
-import Navbar from '../../components/navbar';
-import { getData } from '../../api'
 import { CartesianGrid, Label, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import styles from './ChartPage.module.scss';
-import { Await, useLoaderData } from 'react-router-dom';
+import styles from './MetricComponents.module.scss';
+import { Await } from 'react-router-dom';
 
-const param = 'arctic';
+function PolarIce(props) {
 
-function PolarIce() {
-
-    const loaderData = useLoaderData();
+    let loader = props.loaderData;
 
     return (
     <div>
-        <Navbar />
         <div className={styles.container}>
         <h2 className={styles.title}>Melted Polar Ice Caps</h2>
         <p className={styles.subtitle}>Melted Polar Ice Caps since 1979</p>
 
         <React.Suspense fallback={<p>Loading...</p>}>
-            <Await resolve={loaderData.data.arcticData}>
+            <Await resolve={loader.data.arcticData}>
             {(data) => (
             <ResponsiveContainer width='100%' height={500} >
                 <LineChart data={data} margin={{bottom: 10, left: 10}}>
@@ -45,8 +40,4 @@ function PolarIce() {
     )
 }
 
-export default PolarIce
-
-export function loader() {
-    return getData(param);
-}
+export default PolarIce;
