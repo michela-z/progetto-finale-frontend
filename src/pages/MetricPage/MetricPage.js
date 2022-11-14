@@ -17,7 +17,10 @@ function MetricPage() {
   return (
     <div>
       <Navbar />
-      <div className={styles.container}> 
+      <div className={styles.container}>
+
+        {/* Invece di creare un gafico unico ho conservato i grafici come componenti perchè sono tutti diversi l'uno dall'altro */}
+
         <Routes>
           <Route exact path={'/temperature'} element={<Temperature loaderData={loaderData}/>}/>
           <Route exact path={'/co2'} element={<Co2 loaderData={loaderData} />} />
@@ -25,6 +28,7 @@ function MetricPage() {
           <Route exact path={'/nitrous-oxide'} element={<No2 loaderData={loaderData}/>} />
           <Route exact path={'/arctic'} element={<PolarIce loaderData={loaderData}/>} />
         </Routes>
+
       </div>
     </div>
   )

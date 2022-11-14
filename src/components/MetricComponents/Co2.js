@@ -51,8 +51,4 @@ function Co2( props ) {
     )
 }
 
-export default Co2
-
-// export function loader() {
-//     return getData(param);
-// }
+export default Co2;
